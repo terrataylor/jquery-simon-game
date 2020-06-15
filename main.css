@@ -51,7 +51,7 @@ html {
   height: 50px;
   position: relative;
   margin: 0;
-  left: 215px;
+  left: 223px;
   border-radius: 10px;
   background: border-box red;
   cursor:pointer;
@@ -127,16 +127,4 @@ font-weight: bold;
 
 .simon-button.blue.light-up,.simon-button.blue:active {
   box-shadow: 10px 10px 5px rgb(135, 180, 214);
-}
-
-
-@keyframes ani-green {
-   25% {
-    box-shadow: 10px 10px 5px rgb(131, 211, 150);
-  }
-
- 
-  100% {
-    box-shadow: 10px 10px 5px green;
-  }
 }

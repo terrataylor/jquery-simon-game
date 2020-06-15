@@ -2,29 +2,27 @@
 // All the event-listening should happen in buttons.js 
 let options = ["green", "red", "yellow", "blue"];
 let comp = [options[Math.floor(Math.random() * 4)]];
-let round =1;
-
+let round = 1;
 let i = 0;
+
+function startGame() {
+    setTimeout(lightUp, 1000);
+}
+
 function checkPlayer() {
     console.log(moves, comp)
     if (moves.length === comp.length) {
         if (JSON.stringify(moves) == JSON.stringify(comp)) {
-            if (moves.length == comp.length) {
-                //comp move
-                generateNextColor();
-                i = 0;
-                setTimeout(lightUp, 1000);
-            }
+            //comp move
+            generateNextColor();
+            i = 0;
+            setTimeout(lightUp, 1000);
+
         } else {
             $(".fail").show();
             $(".simon-button").off("click");
         }
     }
-}
-
-function startGame() {
-    console.log(comp);
-    setTimeout(lightUp, 1000);
 }
 
 function generateNextColor() {
@@ -60,9 +58,13 @@ function lightUp() {
         }
         setTimeout(lightUp, 2000);
     } else {
-        $(".simon-button").toggleClass("light-up", false);
+        clearColor();
     }
     i++;
+}
+
+function clearColor() {
+    $(".simon-button").toggleClass("light-up", false);
 }
 
 function reset() {

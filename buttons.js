@@ -9,7 +9,8 @@ $('#start').on('click', function () {
   startGame();
   $(".fail").hide();
 
-  $('.simon-button.green').on('click', function () {
+
+ $('.simon-button.green').on('click', function () {
     moves.push("green");
     let sound = green.cloneNode();
     sound.play();
