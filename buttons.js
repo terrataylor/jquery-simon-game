@@ -11,34 +11,33 @@ $('#start').on('click', function () {
 
   $('.simon-button.green').on('click', function () {
     moves.push("green");
-    let audio = $("#green")[0];
-    green.play();
+    let sound = green.cloneNode();
+    sound.play();
     checkPlayer();
   });
 
   $('.simon-button.blue').on('click', function () {
     moves.push("blue");
-    let audio = $("#blue")[0];
-    blue.play();
+    let sound = blue.cloneNode();
+    sound.play();
     checkPlayer();
   });
 
   $('.simon-button.yellow').on('click', function () {
     moves.push("yellow");
-    let audio = $("#yellow")[0];
-    yellow.play();
+    let sound = yellow.cloneNode();
+    sound.play();
     checkPlayer();
   });
 
   $('.simon-button.red').on('click', function () {
     moves.push("red");
-    let audio = $("#red")[0];
-    red.play();
+    let sound = red.cloneNode();
+    sound.play();
     checkPlayer();
   });
 });
 
 $('#reset').on('click', function () {
-
   reset();
 });

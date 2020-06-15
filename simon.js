@@ -2,6 +2,7 @@
 // All the event-listening should happen in buttons.js 
 let options = ["green", "red", "yellow", "blue"];
 let comp = [options[Math.floor(Math.random() * 4)]];
+let round =1;
 
 let i = 0;
 function checkPlayer() {
@@ -21,13 +22,14 @@ function checkPlayer() {
     }
 }
 
-
 function startGame() {
     console.log(comp);
     setTimeout(lightUp, 1000);
 }
 
 function generateNextColor() {
+    round++;
+    $("#round").html(round);
     comp.push(options[Math.floor(Math.random() * 4)]);
     moves = [];
 }
@@ -38,31 +40,29 @@ function lightUp() {
         $(`.${comp[i]}`).toggleClass("light-up", true);
         switch (comp[i]) {
             case "red":
-                red.play();
+                let sound1 = red.cloneNode();
+                sound1.play();
                 break;
             case "green":
-                green.play();
+                let sound2 = green.cloneNode();
+                sound2.play();
                 break;
             case "blue":
-                blue.play();
+                let sound3 = blue.cloneNode();
+                sound3.play();
                 break;
             case "yellow":
-                yellow.play();
+                let sound4 = yellow.cloneNode();
+                sound4.play();
                 break;
             default:
                 console.log("?");
         }
-        setTimeout(lightUp, 3000);
+        setTimeout(lightUp, 2000);
     } else {
-        clearColor();
+        $(".simon-button").toggleClass("light-up", false);
     }
     i++;
-}
-
-
-
-function clearColor() {
-    $(".simon-button").toggleClass("light-up", false);
 }
 
 function reset() {
